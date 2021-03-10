@@ -52,8 +52,8 @@
   margin: 15px 0px 0px 0px;
 }
 
-.movieCardImageContainer img {
-  width: 100%;
+.taskImg {
+  width: 500px;
   height: 378px;
 }
 

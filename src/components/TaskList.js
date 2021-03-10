@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../TaskList.css';
 
 //import './App.css';
 class TaskList extends Component {
@@ -37,7 +38,7 @@ class TaskList extends Component {
 
   createTask = async (e) => {
     e.preventDefault();
-    this.getTasks();
+    //this.getTasks();
     const data = {
       eventId: this.state.eventId,
       desc: this.state.desc,
@@ -49,6 +50,7 @@ class TaskList extends Component {
     console.log(data);
     const response = await axios.post('http://localhost:3004/task/createTask', data);
     console.log(response);
+    this.getTasks();
   };
 
   deleteTask=  async (e) => {
@@ -60,11 +62,11 @@ class TaskList extends Component {
   render() {
     const tasks = this.state.tasks.map((task) => {
       return (
-        <div key="firstName">
-          <h3>{task.desc}</h3>
-          <img src={task.img} alt='family picture' />
+        <div className="task-wrapper" key="firstName">
+          <h3>Task Desc: {task.desc} for {task.firstName} {task.lastName}{task.completed}</h3>
+          <img className="taskImg" src={task.image} alt='family picture' />
           <p>
-            {task.firstName} {task.lastName}
+            some texts here
           </p>
           <button id={task.id} onClick={this.deleteTask}>delete</button>
         </div>

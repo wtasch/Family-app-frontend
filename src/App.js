@@ -9,6 +9,9 @@ import KidsPage from './components/KidsPage';
 import Parent from './components/Parent';
 import Signup from './components/Signup';
 import TaskList from './components/TaskList';
+import Footer from './components/Footer';
+import Header from './components/Header';
+
 
 
 class App extends Component {
@@ -72,27 +75,48 @@ class App extends Component {
     return (
 
       <div className="App">
+        <Header />
         
         <div>
-          <TaskList />
-          <Signup />
-          <Parent />
+          
+          {/* <TaskList /> */}
+          {/* <Signup /> */}
+          {/* <Parent />  */}
           
           
         </div>
         <nav>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">Kids Profile</Link>
             <Link to="/users">Users</Link>
         </nav>
           <h1>Family App</h1>
+          {/* <Switch> */}
           <Route path="/profile" render={() => (
             <Profile user={this.state.user} />
           )} />
-          <Route path="/users" render={() => (
+
+          <Route path="/TaskList" render={() => (
+          <TaskList
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
+        
+           <Route path="/Parent" render={() => (
+          <Parent
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+           />
+        )} />
+
+          <Route path="/KidsPage" render={() => (
           <KidsPage
            potentialKids={this.state.potentialKids}
            addKid={this.addKid} />
         )} />
+      {/* </Switch> */}
+
       </div>
     );
   }

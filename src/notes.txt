@@ -1,6 +1,6 @@
 warning for key id
-fix add user in Users page
-create seed file.  repo 401
+
+
 
 
 sequelize model:generate --name Tasks --attributes taskID:integer,desc:string,firstName:string,lastName:string,image:string,completed:string

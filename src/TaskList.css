@@ -1,42 +1,42 @@
-.movieList {
+.taskList not used {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 50px 0px 50px;
   background-color: #353b48;
   justify-content: center;
-  margin: 0px 0px 100px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
-.movieList h1 {
+.movieList h1  not used{
   width: 100%;
 }
 
-.movieCard {
-  width: 300px;
-  height: 500px;
+.task-wrapper {
+  width: 700px;
+  height: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   margin: 25px;
-  border: solid 2px #718093;
+  border: solid 2px blue;
 
 }
 
-.movieCard:hover {
-  width: 300px;
-  height: 500px;
+.task-wrapper:hover {
+  width: 700px;
+  height: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   margin: 25px;
-  border: solid 4px #718093;
+  border: solid 10px blue;
   
 
 }
 
-.movieCard a {
+.taskCard a {
   width: 100%;
   text-decoration: none;
   font-size: 24px;
@@ -44,7 +44,7 @@
   color: #f5f6fa;
 }
 
-.movieCardImageContainer {
+.taskCardImageContainer {
   width: 250px;
   display: flex;
   justify-content: center;
@@ -53,11 +53,82 @@
 }
 
 .taskImg {
-  width: 500px;
-  height: 378px;
+  width: 400px;
+  height: 375px;
 }
 
-.movieCardTitle {
+.taskCardTitle {
   margin: 0px 15px 15px 15px;
 }
+
+.taskInput {
+  display: block;
+  width: 250px;
+  border-radius: 6px;
+  background-color: #af4caa;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 14px 12px;
+  cursor: pointer;
+  
+}
+
+.taskInputCell {
+  border-radius: 6px;
+  background-color: rgb(154, 154, 187);
+  border: none;
+  color: blue;
+  /* padding: 16px 32px; */
+  margin: 14px 12px;
+  font-size: 20px;
+
+
+}
+
+.delButton {
+  outline: none;
+  border: 4px solid blue;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  align-items: center;
+  border-radius: 100px 100px 100px 100px;
+  font-family: sans-serif;
+  color: red;
+ 
+  margin: 10px;
+ 
+}
+
+.delButton:hover {
+  cursor: pointer;
+  background: red;
+  color: white;             
+}
+
+.taskLink {
+  outline: none;
+  border: 4px solid blue;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  align-items: center;
+  border-radius: 100px 100px 100px 100px;
+  font-family: sans-serif;
+  color: lightgreen;
+  margin: 10px;
+ 
+}
+
+.taskLink:hover {
+  background-color: green;
+  cursor: pointer;
+  background: greenred;
+  color: white;             
+}
+
 

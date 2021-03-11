@@ -4,10 +4,7 @@ import '../Header.css';
 
 //mport Search from './Search';
 
-
 const Header = (props) => {
-
-
   return (  
 <div>
     <header>
@@ -24,13 +21,16 @@ const Header = (props) => {
           </div>
           <Link className="headerLink" to="/">Home</Link>
          
-          <Link className="headerLink" to="/profile">Kids Profile</Link>
+          
           {/* <Link className="headerLink" to="/users">Users</Link> */}
           
           {/* <Search /> */}
+          <Link className="headerLink" to="/TaskForm">Add Task</Link>
           <Link className="headerLink" to="/TaskList">Task List</Link>
+          <Link className="headerLink" to="/profile">Kids Profile</Link>
           <Link className="headerLink" to="/KidsPage">Kids Page</Link>
           <Link className="headerLink" to="/Parent">Par post</Link>
+          <Link className="headerLink" to="/ParentForm">Add Post</Link>
           <Link className="headerLink" to="/users">Users</Link>
           <Link className="headerLink" to="/Login">LogIn</Link>
 

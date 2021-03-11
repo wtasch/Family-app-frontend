@@ -7,8 +7,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Profile from './components/Profile';
 import KidsPage from './components/KidsPage';
 import Parent from './components/Parent';
+import ParentForm from './components/ParentForm';
 import Signup from './components/Signup';
 import TaskList from './components/TaskList';
+import TaskForm from './components/TaskForm';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -84,12 +86,13 @@ class App extends Component {
           {/* <Parent />  */}
           
           
+          
         </div>
-        <nav>
+        {/* <nav>
             <Link to="/profile">Kids Profile</Link>
             <Link to="/users">Users</Link>
         </nav>
-          <h1>Family App</h1>
+          <h1>Family App</h1> */}
           {/* <Switch> */}
           <Route path="/profile" render={() => (
             <Profile user={this.state.user} />
@@ -102,6 +105,13 @@ class App extends Component {
           />
          )} /> 
 
+        <Route path="/TaskForm" render={() => (
+          <TaskForm
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
         
            <Route path="/Parent" render={() => (
           <Parent
@@ -109,6 +119,13 @@ class App extends Component {
           //  addKid={this.addKid} 
            />
         )} />
+
+<Route path="/ParentForm" render={() => (
+          <ParentForm
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
 
           <Route path="/KidsPage" render={() => (
           <KidsPage

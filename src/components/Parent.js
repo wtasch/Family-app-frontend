@@ -53,6 +53,23 @@ class Parent extends Component {
     this.getPosts();
   };
 
+  editPost = async (e) => {
+    e.preventDefault();
+    //this.getPosts();
+    const data = {
+      title: this.state.title,
+      body: this.state.body,
+      img: this.state.img,
+      userId: this.state.userId,
+      eventId: this.state.eventId,
+    };
+    console.log("edit post here " + data);
+    const response = await axios.post('http://localhost:3004/post/createPost', data);
+    console.log("edit after response" + response);
+    this.getPosts();
+  };
+
+
   deletePost=  async (e) => {
     e.preventDefault();  
     const deleteTask = await axios.delete(`http://localhost:3004/post/${e.target.id}`);
@@ -93,16 +110,16 @@ class Parent extends Component {
   render() {
     const posts = this.state.posts.map((post) => {
       return (
-        <div>
+        <div className="task-wrapper">
           <h3>{post.title}</h3>
-          <img src={post.img} alt='family picture' />
+          <img className="taskImg" src={post.img} alt='family picture' />
           <p>
             {post.body}, {post.eventId}
           </p>
           <div>
-            <button className="delButton" id={post.id} onClick={this.deletePost}>Complete</button>
+            <button className="delButton" id={post.id} onClick={this.editPost}>Edit</button>
             <button className="delButton" id={post.id} onClick={this.deletePost}>Delete</button>
-            <Link className="taskLink" to="/TaskForm">Add Tasks</Link>
+            <Link className="taskLink" to="/TaskForm">Add Post</Link>
           </div>
         </div>
       );

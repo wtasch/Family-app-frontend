@@ -74,44 +74,58 @@ class TaskForm extends Component {
     //   );
     // });
     return (
-      <div className='App'>
+      <div className='input-container'>
         <form className="taskInput" onSubmit={this.createTask}>
-          <input
-            name='eventId'
-            className="taskInputCell"
-            type='text'
-            placeholder='enter eventId here'
-            value={this.state.eventId}
-            onChange={this.taskOnChange}
-          />
+          <div className="input-wrapper">
+            <p className="input-name"> Date </p>
+          
+              <input
+                name='eventId'
+                className="taskInputCell"
+                type='text'
+                placeholder='Date Due Date'
+                value={this.state.eventId}
+                onChange={this.taskOnChange}
+              />
+          </div>
 
-<input
-            name='desc'
-            className="taskInputCell"
-            type='text'
-            placeholder='enter new task here'
-            value={this.state.desc}
-            onChange={this.taskOnChange}
-          />
+          <div className="input-wrapper">
+            <p className="input-name"> Project Name </p>
+              <input
+                name='desc'
+                className="taskInputCell"
+                type='text'
+                placeholder='enter new Project here'
+                value={this.state.desc}
+                onChange={this.taskOnChange}
+              />
+          </div>
 
-<input
-            name='firstName'
-            className="taskInputCell"
-            type='text'
-            placeholder='enter firstName here'
-            value={this.state.firstName}
-            onChange={this.taskOnChange}
-          />
-<p> Last Name </p>
-<input      
-            name='lastName'
-            className="taskInputCell"
-            type='text'
-            placeholder='enter last name here'
-            value={this.state.lastName}
-            onChange={this.taskOnChange}
-          />
+          <div className="input-wrapper">
+            <p className="input-name"> Name </p>
+            <input
+                name='firstName'
+                className="taskInputCell"
+                type='text'
+                placeholder='enter Name here'
+                value={this.state.firstName}
+                onChange={this.taskOnChange}
+            />
+          </div>
 
+          <div className="input-wrapper">
+            <p className="input-name"> Project Details </p>
+            <input      
+                name='lastName'
+                className="taskInputCell"
+                type='text'
+                placeholder='Project Details'
+                value={this.state.lastName}
+                onChange={this.taskOnChange}
+          />
+          </div>
+          <div className="input-wrapper">
+            <p className="input-name"> Picture </p>
 <input
             name='image'
             className="taskInputCell"
@@ -120,7 +134,10 @@ class TaskForm extends Component {
             value={this.state.image}
             onChange={this.taskOnChange}
           />
+          </div>
 
+          <div className="input-wrapper">
+            <p className="input-name"> Complete? </p>
 <input
             name='completed'
             className="taskInputCell"
@@ -129,10 +146,13 @@ class TaskForm extends Component {
             value={this.state.completed}
             onChange={this.taskOnChange}
           />
+          </div>
 
-          <input type='submit' value='Add Task' />
+          <input className="taskLink" type='submit' value='Add Task' />
+          <Link className="taskLink" to="/TaskList">Back to Task List</Link>
         </form>
-        <Link className="TaskLink" to="/TaskList">Back to Task List</Link>
+        <br></br>
+        
         {/* {tasks} */}
       </div>
     );

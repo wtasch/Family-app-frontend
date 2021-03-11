@@ -68,13 +68,14 @@ class TaskList extends Component {
           
         <div className="task-wrapper" key="firstName">
          
-          <h3>Task Desc: {task.desc} for {task.firstName} {task.lastName}{task.completed}</h3>
-          <img className="taskImg" src={task.image} alt='family picture' />
+          <h3>Project Description: {task.desc} Also,  {task.firstName} {task.lastName}
+          <br></br>Please Complete by:  {task.completed}</h3>
+          <img className="taskImg" src={task.image} alt='No Picture added to this task' />
           <p>
             {/* some texts here */}
           </p>
             <div>
-            <button className="delButton" id={task.id} onClick={this.deleteTask}>Complete</button>
+            <button className="taskLink" id={task.id} onClick={this.deleteTask}>Complete</button>
             <button className="delButton" id={task.id} onClick={this.deleteTask}>delete</button>
             <Link className="taskLink" to="/TaskForm">Add Tasks</Link></div>
           </div>

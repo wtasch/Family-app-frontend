@@ -19,7 +19,7 @@ const Header = (props) => {
               <h1 className="title2">Fun App</h1>
             </div>
           </div>
-          <Link className="headerLink" to="/">Home</Link>
+          <Link className="headerLink" to="/Home">Home</Link>
          
           
           {/* <Link className="headerLink" to="/users">Users</Link> */}

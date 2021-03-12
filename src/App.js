@@ -13,6 +13,7 @@ import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Home from './components/Home';
 
 
 
@@ -28,9 +29,10 @@ class App extends Component {
         image: "https://i.imgur.com/dShEQw5.jpg",
         kidList: [],
         tasks: [],
-      },
+              },
       apiDataLoaded: false,
-      potentialKids: []
+      potentialKids: [],
+      horses: [],
     }
   }
 
@@ -41,6 +43,7 @@ class App extends Component {
     const randomFour = await axios.get("https://randomuser.me/api/");
     const randomFive = await axios.get("https://randomuser.me/api/");
     const response = await axios.get ('http://localhost:3004/post/all');
+    const horsePic = await axios.get ('https://source.unsplash.com/550x225/?horses&i=0');
     const kids = [
       randomOne.data.results[0],
       randomTwo.data.results[0],
@@ -50,10 +53,12 @@ class App extends Component {
     ];
     this.setState({
       potentialKids: kids,
+      horses: horsePic,
       //
       apiDataLoaded: true
     })
     console.log(response)
+    console.log("horse pic" + horsePic)
   }
   
 
@@ -66,6 +71,14 @@ class App extends Component {
       return newKid.login.uuid !== kid.login.uuid
     })
   
+    // reset = (newKid) => {
+    //   const currentKids = this.state.user;
+    //   currentKids.kidList.push(newKid);
+  
+    //   const potentialKids = this.state.potentialKids;
+    //   const newPotentialKids= potentialKids.filter(kid => {
+    //     return newKid.login.uuid !== kid.login.uuid
+    //   })
 
   this.setState({ 
     user: currentKids,
@@ -81,7 +94,7 @@ class App extends Component {
         <Header />
         
         <div>
-          {/* <Calendar/> */}
+         
           {/* <TaskList /> */}
           {/* <Signup /> */}
           {/* <Parent />  */}
@@ -95,6 +108,11 @@ class App extends Component {
         </nav>
           <h1>Family App</h1> */}
           {/* <Switch> */}
+
+          <Route path="/home" render={() => (
+            <Home />
+          )} />
+
           <Route path="/profile" render={() => (
             <Profile user={this.state.user} />
           )} />
@@ -121,7 +139,7 @@ class App extends Component {
            />
         )} />
 
-<Route path="/ParentForm" render={() => (
+          <Route path="/ParentForm" render={() => (
           <ParentForm
           //  potentialKids={this.state.potentialKids}
           //  addKid={this.addKid} 

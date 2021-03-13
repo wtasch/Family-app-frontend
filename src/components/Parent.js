@@ -47,9 +47,9 @@ class Parent extends Component {
       userId: this.state.userId,
       eventId: this.state.eventId,
     };
-    console.log(data);
+    //console.log(data);
     const response = await axios.post('http://localhost:3004/post/createPost', data);
-    console.log(response);
+    //console.log(response);
     this.getPosts();
   };
 
@@ -119,7 +119,7 @@ class Parent extends Component {
           <div>
             <button className="delButton" id={post.id} onClick={this.editPost}>Edit</button>
             <button className="delButton" id={post.id} onClick={this.deletePost}>Delete</button>
-            <Link className="taskLink" to="/TaskForm">Add Post</Link>
+            <Link className="taskLink" to="/ParentForm">Add Post</Link>
           </div>
         </div>
       );
@@ -143,7 +143,8 @@ class Parent extends Component {
           />
           <input type='submit' value='Login' />
         </form>
-        {posts}
+        <h1>Family Post, Pictures and Comments</h1>
+        {posts} 
       </div>
     );
   }

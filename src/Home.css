@@ -1,0 +1,73 @@
+
+  
+  .homeLink-wrapper {
+    width: 700px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    border: solid 2px blue;
+  
+  }
+
+  h1 {
+    height: 20x;;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: blue;
+    
+  }
+  h3 {
+    width: 100%;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: blue;
+  }
+  
+  .taskCardImageContainer {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px 0px 0px;
+  }
+  
+  .homeImg {
+    max-width: 400px;
+    max-height: 375px;
+  }
+
+ 
+  
+  .homeLink {
+    width: 400px;
+    outline: none;
+    border: 4px solid blue;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: none;
+    align-items: left;
+    border-radius: 10px 10px 10px 10px;
+    font-family: sans-serif;
+    color: rgb(32, 19, 212);
+    margin: 5px;
+  
+   
+  }
+  
+  .homeLink:hover {
+    background-color: rgb(224, 19, 142);
+    cursor: pointer;
+    background: greenred;
+    color: white;             
+  }
+  .homeLink {
+    /* float: left; */
+  }
+  
+  

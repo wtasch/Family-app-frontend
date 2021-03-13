@@ -4,11 +4,11 @@ import axios from 'axios';
 import '../TaskList.css';
 
 //import './App.css';
-class TaskForm extends Component {
+class PartForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [],
+      parts: [],
       eventId: '',
       desc: '',
       firstName: '',
@@ -21,25 +21,25 @@ class TaskForm extends Component {
 
   
   componentDidMount = () => {
-    this.getTasks();
+    this.getParts();
   };
-  getTasks = async () => {
-    const response = await axios.get('http://localhost:3004/task/all');
+  getParts = async () => {
+    const response = await axios.get('http://localhost:3004/part');
     this.setState({
-      tasks: response.data,
+        parts: response.data,
     });
   };
   
-  taskOnChange = (e) => {
+  partOnChange = (e) => {
     e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  createTask = async (e) => {
+  createPart = async (e) => {
     e.preventDefault();
-    //this.getTasks();
+    //this.getparts();
     const data = {
       eventId: this.state.eventId,
       desc: this.state.desc,
@@ -49,44 +49,44 @@ class TaskForm extends Component {
       completed: this.state.completed
     };
     console.log(data);
-    const response = await axios.post('http://localhost:3004/task/createTask', data);
+    const response = await axios.post('http://localhost:3004/part/createPart', data);
     console.log(response);
-    this.getTasks();
+    this.getParts();
   };
 
-  deleteTask=  async (e) => {
+  deletePart=  async (e) => {
     e.preventDefault();  
-    const deleteTask = await axios.delete(`http://localhost:3004/task/${e.target.id}`);
-    console.log(deleteTask)
-    this.getTasks();
+    const deletePart = await axios.delete(`http://localhost:3004/part/${e.target.id}`);
+    console.log(deletePart)
+    this.getParts();
 }
   render() {
 
     return (
       <div className='input-container'>
-        <form className="taskInput" onSubmit={this.createTask}>
-        <h3>Add Tasks</h3>
+        <form className="taskInput" onSubmit={this.createPart}>
+        <h3>Add Parts</h3>
           <div className="input-wrapper">
-            <p className="input-name"> Date </p>          
+            <p className="input-name"> Priority </p>          
               <input
                 name='eventId'
                 className="taskInputCell"
                 type='text'
                 placeholder='Date Due Date'
                 value={this.state.eventId}
-                onChange={this.taskOnChange}
+                onChange={this.partOnChange}
               />
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Name </p>
+            <p className="input-name"> Part Name </p>
               <input
                 name='desc'
                 className="taskInputCell"
                 type='text'
                 placeholder='enter new Project here'
                 value={this.state.desc}
-                onChange={this.taskOnChange}
+                onChange={this.partOnChange}
               />
           </div>
 
@@ -98,7 +98,7 @@ class TaskForm extends Component {
                 type='text'
                 placeholder='enter Name here'
                 value={this.state.firstName}
-                onChange={this.taskOnChange}
+                onChange={this.partOnChange}
             />
           </div>
 
@@ -110,7 +110,7 @@ class TaskForm extends Component {
                 type='text'
                 placeholder='Project Details'
                 value={this.state.lastName}
-                onChange={this.taskOnChange}
+                onChange={this.partOnChange}
           />
           </div>
           <div className="input-wrapper">
@@ -121,7 +121,7 @@ class TaskForm extends Component {
             type='text'
             placeholder='enter pic link here'
             value={this.state.image}
-            onChange={this.taskOnChange}
+            onChange={this.partOnChange}
           />
           </div>
 
@@ -133,16 +133,16 @@ class TaskForm extends Component {
             type='text'
             placeholder='is this complete?'
             value={this.state.completed}
-            onChange={this.taskOnChange}
+            onChange={this.partOnChange}
           />
           </div>
 
-          <input className="taskLink" type='submit' value='Add Task' />
-          <Link className="taskLink" to="/TaskList">Back to Task List</Link>
+          <input className="taskLink" type='submit' value='Add Part' />
+          <Link className="taskLink" to="/PartList">Back to Part List</Link>
         </form>
         <br></br>
         
-        {/* {tasks} */}
+        {/* {parts} */}
       </div>
     );
   }
@@ -151,61 +151,4 @@ class TaskForm extends Component {
 
 
 
-export default TaskForm;
-//   class PostContainer extends Component {
-//     constructor(props) {
-//       super(props);
-  
-//       this.state = {
-//         posts: []
-//       }
-//     }
-  
-//     // GET all posts ==> List those posts
-  
-//     createPost = (e, post) => {
-//       e.preventDefault();
-  
-//       const oldPosts = this.state.posts;
-//       oldPosts.push(post);
-  
-//       this.setState({ posts: oldPosts });
-//       this.props.history.push('/profile/post/list');
-//     }
-  
-//     updatePost = (e, postId, revisedPost) => {
-//       e.preventDefault();
-//       const updatedPosts = this.state.posts.map((post, index) => (
-//         parseInt(postId) === index ? revisedPost : post
-//       ))
-  
-//       this.setState({
-//         posts: updatedPosts
-//       })
-//       this.props.history.push('/profile/post/list');
-//     }
-  
-//     render() {
-//       return (
-//         <div>
-//           <Link to="/profile/post/new">Create a Post</Link>
-//           <Link to="/profile/post/list">All Posts</Link>
-//           <Route path="/profile/post/new" render={() => (
-//             <CreatePostForm createPost={this.createPost} />
-//           )} />
-//           <Route path="/profile/post/list" render={() => (
-//             <PostList posts={this.state.posts} />
-//           )} />
-//           <Route path="/profile/post/edit/:index" render={(routerProps) => (
-//             <UpdatePostForm
-//               posts={this.state.posts}
-//               updatePost={this.updatePost}
-//               postId={routerProps.match.params.index}
-//             />
-//           )} />
-//         </div>
-//       )
-//     }
-//   }
-  
-//   export default withRouter(PostContainer);
+export default PartForm;

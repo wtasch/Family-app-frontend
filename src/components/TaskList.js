@@ -60,8 +60,8 @@ class TaskList extends Component {
     this.getTasks();
 }
   render() { 
-    // return(
-    // )
+  
+    <h2>Task List</h2>
     const tasks = this.state.tasks.map((task) => {
       return (
         <div>
@@ -84,7 +84,7 @@ class TaskList extends Component {
     });
     return (
       <div className='App'>
-        
+        <h1>Task List</h1>
         {/* <form className="taskInput" onSubmit={this.createTask}>
           <input
             name='eventId'
@@ -142,9 +142,10 @@ class TaskList extends Component {
 
           <input type='submit' value='Add Task' />
         </form> */}
-       <Link className="headerLink" to="/TaskList">Task List</Link>
+     
         {tasks}
       </div>
+    
     );
   }
 

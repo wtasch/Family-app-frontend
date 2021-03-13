@@ -18,7 +18,7 @@ const KidsPage = (props) => {
 }
   return (
 <div className="kid-wrapper">
-    
+<h1>Check Out These Random Horse Pics</h1>
 
 <img  className="kidImg" src="https://source.unsplash.com/550x225/?horses&i=0" />
 <img  className="kidImg" src="https://source.unsplash.com/550x225/?horses&i=1" />

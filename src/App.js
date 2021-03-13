@@ -14,7 +14,12 @@ import TaskForm from './components/TaskForm';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-
+import EventList from './components/EventList';
+import EventForm from './components/EventForm';
+import PartList from './components/PartList';
+import PartForm from './components/PartForm';
+import ShopList from './components/ShopList';
+import ShopForm from './components/ShopForm';
 
 
 
@@ -57,8 +62,8 @@ class App extends Component {
       //
       apiDataLoaded: true
     })
-    console.log(response)
-    console.log("horse pic" + horsePic)
+   // console.log(response)
+   // console.log("horse pic" + horsePic)
   }
   
 
@@ -94,7 +99,9 @@ class App extends Component {
         <Header />
         
         <div>
-         
+          {/* <ShopList /> */}
+          {/* <PartList /> */}
+         {/* <EventList /> */}
           {/* <TaskList /> */}
           {/* <Signup /> */}
           {/* <Parent />  */}
@@ -117,6 +124,18 @@ class App extends Component {
             <Profile user={this.state.user} />
           )} />
 
+          <Route path="/EventList" render={() => (
+            <EventList />
+          )} />
+
+          <Route path="/EventForm" render={() => (
+          <EventForm
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
+
           <Route path="/TaskList" render={() => (
           <TaskList
           //  potentialKids={this.state.potentialKids}
@@ -131,6 +150,34 @@ class App extends Component {
           />
          )} /> 
 
+        <Route path="/ShopList" render={() => (
+          <ShopList
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
+        <Route path="/ShopForm" render={() => (
+          <ShopForm
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
+
+        <Route path="/PartList" render={() => (
+          <PartList
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
+
+          <Route path="/PartForm" render={() => (
+          <PartForm
+          //  potentialKids={this.state.potentialKids}
+          //  addKid={this.addKid} 
+          />
+         )} /> 
         
            <Route path="/Parent" render={() => (
           <Parent

@@ -8,11 +8,11 @@ class ParentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [],
-      title: '',
-      body: '',
+      events: [],
+      name: '',
       img: '',
-      userId: '',
+      workOn: '',
+      location: '',
       eventId: ''
       
     };
@@ -20,44 +20,44 @@ class ParentForm extends Component {
 
   
   componentDidMount = () => {
-    this.getPosts();
+    this.getEvents();
   };
-  getPosts = async () => {
-    const response = await axios.get('http://localhost:3004/post/all');
+  getEvents = async () => {
+    const response = await axios.get('http://localhost:3004/event');//was /all
     this.setState({
-      posts: response.data,
+        events: response.data,
     });
   };
 
-  postOnChange = (e) => {
+  eventOnChange = (e) => {
     e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  createPost = async (e) => {
+  createEvent = async (e) => {
     e.preventDefault();
     //this.getTasks();
-    const data = {
-        eventId: this.state.eventId,
-        title: this.state.title,
-        body: this.state.body,
+    const data = {        
+        name: this.state.name,
         img: this.state.img,
-        userId: this.state.userId,
+        workOn: this.state.workOn,
+        location: this.state.location,
+        eventId: this.state.eventId,
         
       };
-    console.log(data);
-    const response = await axios.post('http://localhost:3004/post/createPost', data);
-    console.log(response);
-    this.getPosts();
+    console.log("before api event post" + data);
+    const response = await axios.post('http://localhost:3004/event/createEvent', data);
+    console.log("after api event response" + response);
+    this.getEvents();
   };
 
-  deletePost=  async (e) => {
+  deleteEvent=  async (e) => {
     e.preventDefault();  
-    const deletePost = await axios.delete(`http://localhost:3004/post/${e.target.id}`);
-    console.log(deletePost)
-    this.getPosts();
+    const deleteEvent = await axios.delete(`http://localhost:3004/event/${e.target.id}`);
+    console.log(deleteEvent)
+    this.getEvents();
 }
   render() {
     // const tasks = this.state.tasks.map((task) => {
@@ -74,72 +74,72 @@ class ParentForm extends Component {
     // });
     return (
       <div className='input-container'>
-        
-        <form className="taskInput" onSubmit={this.createPost}>
-        <h3>Add Posts, Picture and Comments</h3>
+          
+        <form className="taskInput" onSubmit={this.createEvent}>
+            <h3>Add Events</h3>
           <div className="input-wrapper">
-                <p className="input-name"> Title </p>          
+                <p className="input-name"> Event Name </p>          
                   <input
-                    name='title'
+                    name='name'
                     className="taskInputCell"
                     type='text'
                     placeholder='enter title here'
-                    value={this.state.title}
-                    onChange={this.postOnChange}
+                    value={this.state.name}
+                    onChange={this.eventOnChange}
                   />
           </div>
 
           <div className="input-wrapper">
-                <p className="input-name"> Comments </p>          
+                <p className="input-name"> Image link </p>          
 
-                  <input
-                    name='body'
-                    className="taskInputCell"
-                    type='text'
-                    placeholder='enter Comments here'
-                    value={this.state.body}
-                    onChange={this.postOnChange}
-                  />
-          </div>
-
-          <div className="input-wrapper">
-                <p className="input-name"> Image Link </p>   
                   <input
                     name='img'
                     className="taskInputCell"
                     type='text'
-                    placeholder='enter image link here'
+                    placeholder='enter Comments here'
                     value={this.state.img}
-                    onChange={this.postOnChange}
+                    onChange={this.eventOnChange}
                   />
           </div>
 
           <div className="input-wrapper">
-                <p className="input-name"> User </p>   
+                <p className="input-name"> Date mm/dd/yy</p>   
+                  <input
+                    name='workOn'
+                    className="taskInputCell"
+                    type='text'
+                    placeholder='enter image link here'
+                    value={this.state.wordOn}
+                    onChange={this.eventOnChange}
+                  />
+          </div>
+
+          <div className="input-wrapper">
+                <p className="input-name"> Location </p>   
                   <input      
-                    name='userId'
+                    name='location'
                     className="taskInputCell"
                     type='text'
                     placeholder='enter last name or user id here'
-                    value={this.state.userId}
-                    onChange={this.postOnChange}
+                    value={this.state.location}
+                    onChange={this.eventOnChange}
                   />
           </div>
 
           <div className="input-wrapper">
-                  <p className="input-name"> Event Info </p>   
+                  <p className="input-name"> Priority </p>   
                    <input
                     name='eventId'
                     className="taskInputCell"
                     type='text'
                     placeholder='enter event here'
                     value={this.state.eventId}
-                    onChange={this.postOnChange}
+                    onChange={this.eventOnChange}
                   />
           </div>
 
-          <input className="taskLink" type='submit' value='Add post' />
-          <Link className="taskLink" to="/Parent">Back to Parent List</Link>
+          <input className="taskLink" type='submit' value='Add event' />
+          <Link className="taskLink" to="/EventList">Back to Event List</Link>
         </form>
        
         {/* {tasks} */}

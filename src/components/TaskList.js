@@ -29,6 +29,7 @@ class TaskList extends Component {
       tasks: response.data,
     });
   };
+
   taskOnChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -52,6 +53,8 @@ class TaskList extends Component {
     console.log(response);
     this.getTasks();
   };
+
+
 
   deleteTask=  async (e) => {
     e.preventDefault();  
@@ -78,7 +81,9 @@ class TaskList extends Component {
             <div>
             <button className="taskLink" id={task.id} onClick={this.deleteTask}>Complete</button>
             <button className="delButton" id={task.id} onClick={this.deleteTask}>delete</button>
-            <Link className="taskLink" to="/TaskForm">Add Tasks</Link></div>
+            {/* <button className="taskLink" id={task.id} onClick={this.editTask}>edit</button> */}
+            <Link className="taskLink" to="/TaskForm">Add Tasks</Link>
+            <Link className="taskLink" to={`TaskEdit/${task.id}`}>edit Tasks</Link></div>
           </div>
         </div>
         

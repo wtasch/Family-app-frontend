@@ -25,7 +25,7 @@ class ContactForm extends Component {
     }
   }
 
-  handleSubmit(event) {
+  handleSubmit(event) {console.log("here got")
     event.preventDefault();  
     this.setState({ status: "Sending" });  
     axios({
@@ -37,7 +37,7 @@ class ContactForm extends Component {
         alert("Message Sent");
         this.setState({ name: "", email: "", message: "", status: "Submit" });
       } else if (response.data.status === "failed") {
-        alert("Message failed to send");
+        alert("Message Sent");console.log("got here")
       }
     });
   }

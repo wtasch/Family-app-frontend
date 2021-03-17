@@ -60,7 +60,8 @@ class Signup extends Component {
     try{
     const response = await axios.post('http://localhost:3004/auth/signup', data);
     console.log(response);
-    console.log(response.data.user.username);       
+    console.log(response.data.user.username);      
+    this.props.history.push("/Home") 
 
 
 
@@ -119,11 +120,13 @@ class Signup extends Component {
 
 
     return (
-      <div className='App'>
+      <div  className='input-container' >
         
-        <form onSubmit={this.signup}>
-          <p>Please Sign up</p>
+        <form  className="taskInput" onSubmit={this.signup}>
+          <h3>Please Sign up</h3>
+          
           <input
+          className="taskInputCell"
             name='username'
             type='text'
             placeholder='username'
@@ -131,6 +134,7 @@ class Signup extends Component {
             onChange={this.signupOnChange}
           />
           <input
+          className="taskInputCell"
             name='password'
             type='password'
             placeholder='password'
@@ -138,6 +142,7 @@ class Signup extends Component {
             onChange={this.signupOnChange}
           />
             <input
+            className="taskInputCell"
             name='name'
             type='text'
             placeholder='name'

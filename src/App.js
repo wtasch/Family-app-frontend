@@ -11,6 +11,7 @@ import ParentForm from './components/ParentForm';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import TaskList from './components/TaskList';
+import TaskEdit from './components/TaskEdit';
 import TaskForm from './components/TaskForm';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -124,14 +125,14 @@ class App extends Component {
           )} />
 
 
-          <Route exact path="/" render={() => (
-          <Login     />
+          <Route exact path="/" render={(routerProps) => (
+          <Login  {...routerProps}   />
          )} /> 
 
 
 
-          <Route path="/Signup" render={() => (
-          <Signup     />
+          <Route path="/Signup" render={(routerProps) => (
+          <Signup  {...routerProps}   />
          )} /> 
 
           <Route path="/User" render={() => (
@@ -171,6 +172,13 @@ class App extends Component {
 
           />
          )} /> 
+
+        <Route path="/TaskEdit/:id" render={(routerProps) => (
+          <TaskEdit {...routerProps}
+
+          />
+         )} /> 
+
 
         <Route path="/ShopList" render={() => (
           <ShopList

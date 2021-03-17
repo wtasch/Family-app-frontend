@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-let loggedIn = 0;
+import '../TaskList.css';
+
 
 //import './App.css';
 class Login extends Component {
@@ -11,8 +12,7 @@ class Login extends Component {
       username: '',
       password: '',
       name: '',
-      isActive: '',
-      loggedIn: '',
+      isActive: ''
     };
   }
 
@@ -43,15 +43,28 @@ class Login extends Component {
 //     console.log(response);
 //   };
 
+
+
+//   componentDidMount = () => {
+//     this.getProfile();
+//   };
+//   getProfile = async (e) => {
+//     const response = await axios.get(`http://localhost:3004/user/${e.target.id}`);
+//     this.setState({
+//       posts: response.data,
+//     });
+//   };
+
   loginOnChange = (e) => {
     e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
   login = async (e) => {
     e.preventDefault();
-    loggedIn=1;
+    
     const data = {
       username: this.state.username,
       password: this.state.password,
@@ -59,13 +72,13 @@ class Login extends Component {
       isActive: this.state.isActive
     };
     console.log(data);
-    // loggedIn=1;
-    console.log(loggedIn)
+
     try{
     const response = await axios.post('http://localhost:3004/auth/login', data);
     console.log(response);
-    console.log(response.data.user.username);  
-    // loggedIn=1;
+    console.log(response.data.user.username); 
+    console.log(response.data.user.isActive);
+    this.props.history.push("/Home")
       
 
     }
@@ -112,11 +125,24 @@ class Login extends Component {
     //     </div>
     //   );
     // });
+
+    // if(this.state.isActive=== true) {
+        // return (
+       
+    //     <div>
+    //  <p>{this.state.username}</p>
+    //     </div>
+    //     )
+    // }
     return (
-      <div className='App'>
-        <form onSubmit={this.login}>
-          <p>Please Log In</p>
+      <div  className='input-container' >
+
+       
+        <form  className="taskInput" onSubmit={this.login}>
+          <h3>Please Log In</h3>
+          <div className="input-wrapper">
           <input
+           className="taskInputCell"
             name='username'
             type='text'
             placeholder='username'
@@ -124,19 +150,20 @@ class Login extends Component {
             onChange={this.loginOnChange}
           />
           <input
+           className="taskInputCell"
             name='password'
             type='password'
             placeholder='password'
             value={this.state.password}
             onChange={this.loginOnChange}
           />
-    <p> Welcome:  {this.state.username}</p>
-          <input type='submit' value='login' />
+       </div>
+          <Link className="taskLink" to="/Signup">Sign Up</Link>
+          <input className="taskLink" type='submit'  value='Login' />
         </form>
-        {this.state.isActive}
-        {this.state.username}
-        <Link className="taskLink" to="/Home">Log In</Link>
-        <Link className="taskLink" to="/Signup">Sign Up</Link>
+        
+         {/* <Link className="taskLink" to="/Home">Log In</Link> */}
+     
         {/* {posts} */}
       </div>
     );

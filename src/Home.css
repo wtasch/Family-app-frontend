@@ -70,6 +70,7 @@
   .home-back {
   background-image: url("https://i.imgur.com/nm12IGh.jpg");
   background-size: cover;
+  min-height: 600px;
   /* height: auto; 
   width: auto; 
   max-width: 3000px; 

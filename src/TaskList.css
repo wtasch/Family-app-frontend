@@ -1,8 +1,6 @@
 
 
-.movieList h1  not used{
-  width: 100%;
-}
+
 
 .task-wrapper {
   /* max-width: 700px; */
@@ -185,17 +183,17 @@ h3 {
 }
 
 .task-back {
-  background-image: url("https://i.imgur.com/1kkLdUc.jpg") ;
-  background-size: 10%;
-  /* width: 100%;
-  height: auto; */
+
+  background-image: url("https://i.imgur.com/nm12IGh.jpg");
+  background-size: cover;
+  min-height: 600px;
+ 
 }
 
 .App {
-  background-image: url("https://i.imgur.com/1kkLdUc.jpg") ;
-  /* background-size: 10%; */
-  /* width: 100%;
-  height: auto; */
+  background-image: url("https://i.imgur.com/nm12IGh.jpg");
+  background-size: cover;
+  min-height: 600px;
 }
 
 

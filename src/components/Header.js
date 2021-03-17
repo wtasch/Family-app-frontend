@@ -13,33 +13,37 @@ const Header = (props) => {
       <nav>
         <div className="headerNav">
           <div className="logoTitleHeader">
-            <img className="logoNav" src="https://i.imgur.com/hK56ljr.jpg"></img>
+            <img className="logoNav" src="https://i.imgur.com/nzjlYmo.jpg"></img>
             <div className="navTitle">
               <h1 className="title1">Family </h1>
               <h1 className="title2">Fun App</h1>
             </div>
           </div>
-          <Link className="headerLink" to="/Home">Home</Link>
+          <div className="navBar">
+          <Link className="headerLink" to="/Home">Home</Link> |
          
           
           {/* <Link className="headerLink" to="/users">Users</Link> */}
           
           {/* <Search /> */}
           {/* <Link className="headerLink" to="/TaskForm">Add Task</Link> */}
-          <Link className="headerLink" to="/TaskList">Task List</Link>
-          <Link className="headerLink" to="/profile">Kids Profile</Link>
-          <Link className="headerLink" to="/KidsPage">Horse</Link>
-          <Link className="headerLink" to="/Parent">Par post</Link>
+          <Link className="headerLink" to="/TaskList">Task List</Link> |
+          {/* <Link className="headerLink" to="/profile">Kids Profile</Link> | */}
+   
+          <Link className="headerLink" to="/Parent">Family Posts </Link> |
           {/* <Link className="headerLink" to="/ParentForm">Add Post</Link> */}
           {/* <Link className="headerLink" to="/EventForm">Add Event</Link> */}
-          <Link className="headerLink" to="/EventList">Event List</Link>
-          <Link className="headerLink" to="/PartList">Part List</Link>
-          <Link className="headerLink" to="/ShopList">Shopping List</Link>
+          <Link className="headerLink" to="/EventList">Event List</Link> |
+          <Link className="headerLink" to="/PartList">Part List</Link> |
+          <Link className="headerLink" to="/ShopList">Shopping List</Link> |
           {/* <Link className="headerLink" to="/ShopForm">Add Item to Shopping List</Link> */}
           {/* <Link className="headerLink" to="/PartForm">Add Part</Link> */}
-          {/* <Link className="headerLink" to="/users">Users</Link>
-          <Link className="headerLink" to="/Login">LogIn</Link> */}
-
+           {/* <Link className="headerLink" to="/users">Users</Link> */}
+          
+          <Link className="headerLink" to="/KidsPage">Random Horse Pics</Link>  |
+          <Link className="headerLink" to="/contactForm">Contact Us</Link>  |
+          <Link className="headerLink" to="/">LogIn</Link>
+        </div>
         </div>
         <div className="headerBottomBorder"></div>
       </nav>

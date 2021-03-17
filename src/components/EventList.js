@@ -71,12 +71,11 @@ class EventList extends Component {
           
         <div className="task-wrapper" key="firstName">
          
-          <h3>Project Description: {event.name} Also,   {event.workOn}
-          <br></br>Please Complete by:  {event.location}</h3>
+          <h3 className="showText">Event Description: {event.name} </h3>
+          <h3 className="showText">Event Date:    {event.workOn} </h3>
+          <h3 className="showText">Location:  {event.location}</h3>
           <img className="taskImg" src={event.img} alt='No Picture added to this event' />
-          <p>
-            some texts  from event component here
-          </p>
+
             <div>
             <button className="taskLink" id={event.id} onClick={this.deleteEvent}>Complete</button>
             <button className="delButton" id={event.id} onClick={this.deleteEvent}>delete</button>
@@ -89,7 +88,7 @@ class EventList extends Component {
       <div className='App'>
         
         <h1>Events List</h1>
-       <Link className="headerLink" to="/EventList">Event List</Link>
+       
         {events}
       </div>
     );

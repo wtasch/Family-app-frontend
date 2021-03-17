@@ -13,8 +13,7 @@ class ParentForm extends Component {
       img: '',
       workOn: '',
       location: '',
-      eventId: ''
-      
+      eventId: ''      
     };
   }
 
@@ -83,7 +82,7 @@ class ParentForm extends Component {
                     name='name'
                     className="taskInputCell"
                     type='text'
-                    placeholder='enter title here'
+                    placeholder='enter name here'
                     value={this.state.name}
                     onChange={this.eventOnChange}
                   />

@@ -115,7 +115,7 @@ class ParentForm extends Component {
           </div>
 
           <div className="input-wrapper">
-                <p className="input-name"> User </p>   
+                <p className="input-name"> User Number </p>   
                   <input      
                     name='userId'
                     className="taskInputCell"
@@ -127,7 +127,7 @@ class ParentForm extends Component {
           </div>
 
           <div className="input-wrapper">
-                  <p className="input-name"> Event Info </p>   
+                  <p className="input-name"> Event Number </p>   
                    <input
                     name='eventId'
                     className="taskInputCell"

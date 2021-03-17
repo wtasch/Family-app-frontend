@@ -110,13 +110,14 @@ class Parent extends Component {
   render() {
     const posts = this.state.posts.map((post) => {
       return (
-        <div className="task-wrapper">
-          <h3>{post.title}</h3>
-          <img className="taskImg" src={post.img} alt='family picture' />
-          <p>
-            {post.body}, {post.eventId}
-          </p>
-          <div>
+              <div className="task-wrapper">
+                <div className="text-containter">
+                  <h3 className="showText">Comments:  {post.title}</h3>
+                  <h3 className="showText">Body:  {post.body}</h3>
+                 </div> 
+               
+           <img className="taskImg" src={post.img} alt='family picture' />
+         <div>
             <button className="delButton" id={post.id} onClick={this.editPost}>Edit</button>
             <button className="delButton" id={post.id} onClick={this.deletePost}>Delete</button>
             <Link className="taskLink" to="/ParentForm">Add Post</Link>
@@ -126,7 +127,7 @@ class Parent extends Component {
     });
     return (
       <div className='App'>
-        <form onSubmit={this.login}>
+        {/* <form onSubmit={this.login}>
           <input
             name='username'
             type='text'
@@ -141,8 +142,8 @@ class Parent extends Component {
             value={this.state.password}
             onChange={this.loginOnChange}
           />
-          <input type='submit' value='Login' />
-        </form>
+          <input type='submit' value='Login' /><input type='submit' value='signup' />
+        </form> */}
         <h1>Family Post, Pictures and Comments</h1>
         {posts} 
       </div>

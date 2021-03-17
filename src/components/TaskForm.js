@@ -15,6 +15,8 @@ class TaskForm extends Component {
       lastName: '',
       image: '',
       completed: '',
+      username: ''
+
       
     };
   }
@@ -25,6 +27,7 @@ class TaskForm extends Component {
   };
   getTasks = async () => {
     const response = await axios.get('http://localhost:3004/task/all');
+    
     this.setState({
       tasks: response.data,
     });
@@ -41,7 +44,7 @@ class TaskForm extends Component {
     e.preventDefault();
     //this.getTasks();
     const data = {
-      eventId: this.state.eventId,
+      eventId: parseInt(this.state.eventId),
       desc: this.state.desc,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -67,19 +70,30 @@ class TaskForm extends Component {
         <form className="taskInput" onSubmit={this.createTask}>
         <h3>Add Tasks</h3>
           <div className="input-wrapper">
-            <p className="input-name"> Date </p>          
+            {/* <p className="input-name"> Priority: </p>          
               <input
                 name='eventId'
                 className="taskInputCell"
                 type='text'
-                placeholder='Date Due Date'
+                placeholder='1=Urgent  4=can wait'
                 value={this.state.eventId}
                 onChange={this.taskOnChange}
-              />
+              /> */}
+<div>
+<label for="Priority">Select Priority:</label>
+
+
+<select name="eventId" id="Select1" onChange={this.taskOnChange}>
+  <option value="1"> </option>
+  <option value="3">2</option>
+  <option value="5">3</option>
+  <option value="4">4</option>
+</select>
+      </div>
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Name </p>
+            <p className="input-name"> Project Name: </p>
               <input
                 name='desc'
                 className="taskInputCell"
@@ -91,7 +105,7 @@ class TaskForm extends Component {
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Name </p>
+            <p className="input-name"> Name: </p>
             <input
                 name='firstName'
                 className="taskInputCell"
@@ -103,7 +117,7 @@ class TaskForm extends Component {
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Details </p>
+            <p className="input-name"> Notes:  </p>
             <input      
                 name='lastName'
                 className="taskInputCell"
@@ -114,7 +128,7 @@ class TaskForm extends Component {
           />
           </div>
           <div className="input-wrapper">
-            <p className="input-name"> Picture </p>
+            <p className="input-name"> Picture Link: </p>
 <input
             name='image'
             className="taskInputCell"
@@ -126,12 +140,12 @@ class TaskForm extends Component {
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Complete? </p>
+            <p className="input-name"> Due Data:  </p>
 <input
             name='completed'
             className="taskInputCell"
             type='text'
-            placeholder='is this complete?'
+            placeholder='Complete By'
             value={this.state.completed}
             onChange={this.taskOnChange}
           />

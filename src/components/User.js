@@ -4,41 +4,43 @@ import axios from 'axios';
 import '../TaskList.css';
 
 //import './App.css';
-class TaskList extends Component {
+class UserList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [],
-      eventId: '',
-      desc: '',
-      firstName: '',
-      lastName: '',
-      image: '',
-      completed: '',
+        signups: [],
+        username: '',
+        password: '',
+        email: '',
+        name: '',
+        img: '',
+        age: '',
+        isActive: false,
       
     };
   }
 
   
   componentDidMount = () => {
-    this.getTasks();
+    this.getUsers();
   };
-  getTasks = async () => {
-    const response = await axios.get('http://localhost:3004/task/all');
+  getUsers = async () => {
+    const response = await axios.get('http://localhost:3004/user/all');
     this.setState({
-      tasks: response.data,
+        users: response.data,
     });
   };
-  taskOnChange = (e) => {
+  
+  userOnChange = (e) => {
     e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
 
-  createTask = async (e) => {
+  createUser = async (e) => {
     e.preventDefault();
-    //this.getTasks();
+    //this.getUsers();
     const data = {
       eventId: this.state.eventId,
       desc: this.state.desc,
@@ -48,37 +50,37 @@ class TaskList extends Component {
       completed: this.state.completed
     };
     console.log(data);
-    const response = await axios.post('http://localhost:3004/task/createTask', data);
+    const response = await axios.post('http://localhost:3004/user/createUser', data);
     console.log(response);
-    this.getTasks();
+    this.getUsers();
   };
 
-  deleteTask=  async (e) => {
+  deleteUser=  async (e) => {
     e.preventDefault();  
-    const deleteTask = await axios.delete(`http://localhost:3004/task/${e.target.id}`);
-    console.log(deleteTask)
-    this.getTasks();
+    const deleteUser = await axios.delete(`http://localhost:3004/user/${e.target.id}`);
+    console.log(deleteUser)
+    this.getUsers();
 }
   render() { 
    
-    <h2>Task List</h2>
-    const tasks = this.state.tasks.map((task) => {
+    <h2>User List</h2>
+    const users = this.state.users.map((user) => {
       return (
         <div>
           
         <div className="task-wrapper" key="firstName">
             <div className="text-containter">
-              <h3 className="showText">Project Description: {task.desc}</h3>
-              <h3 className="showText"> Task Assigned To:   {task.firstName} </h3>
-              <h3 className="showText"> Project Details:  {task.lastName}</h3>
-              <h3 className="showText">Priority: {task.eventId} |  Please Complete by:  {task.completed}</h3>
+              <h3 className="showText">Project Description: {user.username}</h3>
+              <h3 className="showText"> User Assigned To:   {user.password} </h3>
+              <h3 className="showText"> Project Details:  {user.name}</h3>
+              <h3 className="showText">Priority: {user.email} |  Please Complete by:  {user.age}</h3>
             </div>
-             <img className="taskImg" src={task.image} alt='No Picture added to this task' />
+             <img className="taskImg" src={user.image} alt='No Picture added to this user' />
 
             <div>
-            <button className="taskLink" id={task.id} onClick={this.deleteTask}>Complete</button>
-            <button className="delButton" id={task.id} onClick={this.deleteTask}>delete</button>
-            <Link className="taskLink" to="/TaskForm">Add Tasks</Link></div>
+            <button className="taskLink" id={user.id} onClick={this.deleteUser}>Complete</button>
+            <button className="delButton" id={user.id} onClick={this.deleteUser}>delete</button>
+            <Link className="taskLink" to="/UserForm">Add Users</Link></div>
           </div>
         </div>
         
@@ -86,7 +88,7 @@ class TaskList extends Component {
     });
     return (
       <div className='App'>
-        <h1>Task List</h1>
+        <h1>user List</h1>
         {/* <form className="taskInput" onSubmit={this.createTask}>
           <input
             name='eventId'
@@ -145,7 +147,7 @@ class TaskList extends Component {
           <input type='submit' value='Add Task' />
         </form> */}
      
-        {tasks}
+        {users}
       </div>
     
     );
@@ -156,4 +158,4 @@ class TaskList extends Component {
 
 
 
-export default TaskList;
+export default UserList;

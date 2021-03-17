@@ -68,12 +68,12 @@ class PartList extends Component {
           
         <div className="task-wrapper" key="firstName">
          
-          <h3>Project Description: {part.desc} Also,  {part.firstName} {part.lastName}
-          <br></br>Please Complete by:  {part.completed}</h3>
+          <h3 className="showText">Part Description: {part.desc}  | Qty: {part.eventId} </h3>
+          <h3 className="showText">Location:    {part.firstName}    | 
+          Part is used for: {part.lastName} </h3>
+          <h3 className="showText">Part Number:  {part.completed}</h3>
           <img className="taskImg" src={part.image} alt='No Picture added to this part' />
-          <p>
-            {/* some texts here */}
-          </p>
+
             <div>
             <button className="taskLink" id={part.id} onClick={this.deletePart}>Complete</button>
             <button className="delButton" id={part.id} onClick={this.deletePart}>delete</button>
@@ -86,7 +86,7 @@ class PartList extends Component {
       <div className='App'>
         
         <h1>Parts, Materials and Tools</h1>
-       <Link className="headerLink" to="/PartList">Part List</Link>
+      
         {parts}
       </div>
     );

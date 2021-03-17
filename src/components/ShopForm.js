@@ -67,48 +67,48 @@ class ShopForm extends Component {
         <form className="taskInput" onSubmit={this.createShop}>
         <h3>Add To Shopping List</h3>
           <div className="input-wrapper">
-            <p className="input-name"> Date </p>          
+            <p className="input-name">Quantity </p>          
               <input
                 name='eventId'
                 className="taskInputCell"
                 type='text'
-                placeholder='Date Due Date'
+                placeholder='How Many are Needed?'
                 value={this.state.eventId}
                 onChange={this.shopOnChange}
               />
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Name </p>
+            <p className="input-name"> Item Name </p>
               <input
                 name='desc'
                 className="taskInputCell"
                 type='text'
-                placeholder='enter new Project here'
+                placeholder='What do you Need?'
                 value={this.state.desc}
                 onChange={this.shopOnChange}
               />
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Name </p>
+            <p className="input-name"> Used on: </p>
             <input
                 name='firstName'
                 className="taskInputCell"
                 type='text'
-                placeholder='enter Name here'
+                placeholder='Whats this used for?'
                 value={this.state.firstName}
                 onChange={this.shopOnChange}
             />
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Details </p>
+            <p className="input-name"> Purchase this form:   </p>
             <input      
                 name='lastName'
                 className="taskInputCell"
                 type='text'
-                placeholder='Project Details'
+                placeholder='Where to buy this?'
                 value={this.state.lastName}
                 onChange={this.shopOnChange}
           />
@@ -137,7 +137,7 @@ class ShopForm extends Component {
           />
           </div>
 
-          <input className="taskLink" type='submit' value='Add Shop' />
+          <input className="taskLink" type='submit' value='Add to Shopping List' />
           <Link className="taskLink" to="/ShopList">Back to Shop List</Link>
         </form>
         <br></br>

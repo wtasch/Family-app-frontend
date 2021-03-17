@@ -1,9 +1,13 @@
-warning for key id
-task order by
-edit task
+
+sow task order by
+edit task not functioning correctly
 how does login work to request auth
-home or landing page
+home or landing page need understanding
 button to refresh horse pic
+'login sign up page on home page
+'contact form
+/drop down
+warning for key id
 
 
 
@@ -56,3 +60,5 @@ INSERT INTO "tasks" VALUES
     //console.log(response)
   }
   
+
+  https://dev.to/michaelburrows/setup-a-contact-form-in-react-that-sends-email-using-node-js-50pi

@@ -67,12 +67,12 @@ class PartForm extends Component {
         <form className="taskInput" onSubmit={this.createPart}>
         <h3>Add Parts</h3>
           <div className="input-wrapper">
-            <p className="input-name"> Priority </p>          
+            <p className="input-name"> Quantity </p>          
               <input
                 name='eventId'
                 className="taskInputCell"
                 type='text'
-                placeholder='Date Due Date'
+                placeholder='how many do you need?'
                 value={this.state.eventId}
                 onChange={this.partOnChange}
               />
@@ -84,14 +84,14 @@ class PartForm extends Component {
                 name='desc'
                 className="taskInputCell"
                 type='text'
-                placeholder='enter new Project here'
+                placeholder='enter Part here'
                 value={this.state.desc}
                 onChange={this.partOnChange}
               />
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Name </p>
+            <p className="input-name">Part is Located at:   </p>
             <input
                 name='firstName'
                 className="taskInputCell"
@@ -103,12 +103,12 @@ class PartForm extends Component {
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Project Details </p>
+            <p className="input-name"> Part Used On </p>
             <input      
                 name='lastName'
                 className="taskInputCell"
                 type='text'
-                placeholder='Project Details'
+                placeholder='Part Details'
                 value={this.state.lastName}
                 onChange={this.partOnChange}
           />
@@ -126,12 +126,12 @@ class PartForm extends Component {
           </div>
 
           <div className="input-wrapper">
-            <p className="input-name"> Complete? </p>
+            <p className="input-name"> Part Number </p>
 <input
             name='completed'
             className="taskInputCell"
             type='text'
-            placeholder='is this complete?'
+            placeholder='Part Number'
             value={this.state.completed}
             onChange={this.partOnChange}
           />

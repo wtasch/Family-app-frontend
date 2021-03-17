@@ -9,6 +9,7 @@
     flex-direction: column;
     margin: auto;
     border: solid 2px blue;
+    background-color: lemonchiffon;
   
   }
 
@@ -66,8 +67,15 @@
     background: greenred;
     color: white;             
   }
-  .homeLink {
-    /* float: left; */
+  .home-back {
+  background-image: url("https://i.imgur.com/nm12IGh.jpg");
+  background-size: cover;
+  /* height: auto; 
+  width: auto; 
+  max-width: 3000px; 
+  max-height: 2000p
+   */
+
   }
   
   

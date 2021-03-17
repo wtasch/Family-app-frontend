@@ -68,8 +68,9 @@ class ShopList extends Component {
           
         <div className="task-wrapper" key="firstName">
          
-          <h3>Project Description: {shop.desc} Also,  {shop.firstName} {shop.lastName}
-          <br></br>Please Complete by:  {shop.completed}</h3>
+          <h3 className="showText">Item Description: {shop.desc}  | Qty: {shop.eventId}</h3>
+          <h3 className="showText">Purchase Item From: {shop.lastName}</h3>
+          <h3 className="showText"> Part is used for:  {shop.firstName}</h3>
           {/* <img className="taskImg" src={shop.image} alt='No Picture added to this shop' /> */}
           <p>
             {/* some texts here */}
@@ -77,17 +78,17 @@ class ShopList extends Component {
             <div>
             <button className="taskLink" id={shop.id} onClick={this.deleteShop}>Complete</button>
             <button className="delButton" id={shop.id} onClick={this.deleteShop}>delete</button>
-            <Link className="taskLink" to="/ShopForm">Add Shops</Link></div>
+            <Link className="taskLink" to="/ShopForm">Add to Shopping List</Link></div>
           </div>
         </div>
       );
     });
     return (
       <div className='App'>
-         <h1>Shop List</h1>
+         <h1>Shopping List</h1>
         
 
-       <Link className="headerLink" to="/ShopList">Shopping List</Link>
+       {/* <Link className="headerLink" to="/ShopList">Shopping List</Link> */}
         {shops}
       </div>
     );

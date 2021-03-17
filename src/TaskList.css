@@ -1,37 +1,32 @@
-.taskList not used {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0px 50px 0px 50px;
-  background-color: #353b48;
-  justify-content: center;
-  margin: 0px 0px 0px 0px;
-}
+
 
 .movieList h1  not used{
   width: 100%;
 }
 
 .task-wrapper {
-  /* max-width: 700px;
-  min-height: 600px; */
+  /* max-width: 700px; */
+  min-height: 300px;
+  background-color:beige;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   margin: 25px 125px 25px 125px;
-  border: solid 2px blue;
+  border: solid 2px brown;
 
 }
 
 .task-wrapper:hover {
+  background-color:lemonchiffon;
   /* width: 700px;
   height: 600px; */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   margin: 25px 125px 25px 125px;
-  border: solid 10px blue;
+  border: solid 6px brown;
   
 
 }
@@ -60,8 +55,12 @@ h3 {
 }
 
 .taskImg {
-  max-width: 400px;
-  max-height: 375px;
+  max-width: auto;
+  height: 265px;
+  position: absolute;
+  right: 130px;
+  border: 3px solid brown;
+  margin: 15px 15px 15px 15px;
 }
 
 .taskCardTitle {
@@ -118,7 +117,7 @@ h3 {
   border-radius: 6px;
   background-color: yellow;
   border: none;
-  color: white;
+  color: blue;
   /* padding: 16px 32px; */
   margin: 14px 12px;
   font-size: 20px;
@@ -138,8 +137,8 @@ h3 {
   border-radius: 100px 100px 100px 100px;
   font-family: sans-serif;
   color: red;
- 
-  margin: 10px;
+  float: left;
+  margin: 5px;
  
 }
 
@@ -169,9 +168,34 @@ h3 {
   background-color: rgb(224, 19, 142);
   cursor: pointer;
   background: greenred;
-  color: white;             
+  color: blue;             
 }
 .taskLink {
   float: left;
 }
+
+.showText {
+  text-align: left;
+  margin: 25px;
+}
+
+.text-container {
+  float: left;
+  margin: 25px;
+}
+
+.task-back {
+  background-image: url("https://i.imgur.com/1kkLdUc.jpg") ;
+  background-size: 10%;
+  /* width: 100%;
+  height: auto; */
+}
+
+.App {
+  background-image: url("https://i.imgur.com/1kkLdUc.jpg") ;
+  /* background-size: 10%; */
+  /* width: 100%;
+  height: auto; */
+}
+
 

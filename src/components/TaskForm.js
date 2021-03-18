@@ -84,7 +84,7 @@ class TaskForm extends Component {
 
 
 <select name="eventId" id="Select1" onChange={this.taskOnChange}>
-  <option value="1"> </option>
+  <option value="1">1</option>
   <option value="3">2</option>
   <option value="5">3</option>
   <option value="4">4</option>

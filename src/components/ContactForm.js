@@ -27,7 +27,7 @@ class ContactForm extends Component {
 
   handleSubmit(event) {console.log("here got")
     event.preventDefault();  
-    this.setState({ status: "Sending" });  
+    this.setState({ status: "Message Sent" });  
     axios({
       method: "POST",
       url: "http://localhost:3004/contact",

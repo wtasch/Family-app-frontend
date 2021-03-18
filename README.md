@@ -13,8 +13,8 @@ Develop an application for Familys to help manage Family business.  Include feat
 
 ---
 #### Objective Level 1 (MVP) (complete):
-
-- [x]common header and Nav bar
+- [x] Functional Backend app integrated to Front End app.
+- [x] common header and Nav bar
 - [x] Post tasks for Users with full CRUD Functionality.
 - [x] show list of events and tasks.
 - [x] add and assign task. List task be prioritize
@@ -25,6 +25,7 @@ Develop an application for Familys to help manage Family business.  Include feat
 * [x] Simple styling.
 * [ ] Incorporate Calender.
 * [x] Portfolio Styling.
+* [x] External API for Random Horse Images.
 
 #### Objective Level 3 (partially complete):
 * [x] Password encryption and authorization.
@@ -102,44 +103,23 @@ Develop an application for Familys to help manage Family business.  Include feat
 ---
 
 #### Code snippet:
-This allows for the addition or the removal of horses/trainers:
-```
-if(req.body.addOrRemove == "add") {
-    Trainer.update(req.body, {
-        where: {id: req.params.index},
-        returning: true
-    })
-```
-.....
-```
-else {
-  Trainer.update(req.body, {
-    where: {id: req.params.index},
-    returning: true
-```
+Typical API call to retreive backend data:
 
----
+
+  getEvents = async () => {
+    //console.log("before api event call");
+    const response = await axios.get('http://localhost:3004/event');
+    //console.log("after get all event call" + response);
+    this.setState({
+        events: response.data,
+    });
+  };
 
 #### User stories:
-* As a Horse Farm Manager, I want to know who is training which horse.
-* As a Horse Farm Owner, I want to have a functional website for my customers.
-* As a Trainer, I want to know which horse my boss wants me to train.
-* As an owner, I want to see who is training my horses, using website on my
- phone would be awesome.
-* As a Horse Trainer, I want to know which horses to focus on.
-* I am thinking about having a horse trained at this Farm and what to learn about
- trainers and which horses they are training.
-* I found out this Fancy Horse Farm has a cool web site to keep track of
- horses and trainers.
-* As a Horse Farm Owner, I want to keep track of the horses and trainers
- my manager has assigned.
-* Anyone associated with this Farm would like to see pictures of the horses and
- their Trainers.
-* As a Farm Manager I would like to be able to maintain a current list of horses and trainers on the farm.
+* As a Parent, I want a fun way to assign task and chores to my Kids.
+* With many projects to completed, need a way of tracking.
+* With several cars, tractors, mowers and farm equipemnt, need way of recording repiar parts and also a shopping list.
+* As a kid, need fun way to post comments and pictures
 
 ---
 
-#### Room for improvement:
-* Add a task list for each trainer with priority value.
-* Add an activity schedule list for each horse.
-* New page to display horse activities and trainer tasks with completion date.
